@@ -1,0 +1,67 @@
+#include <stdio.h> 
+#include <conio.h>
+#include <time.h> 
+#include <stdlib.h>
+#define output printf
+#define numerical_value int
+numerical_value temp=0;
+void delay(numerical_value seconds_delay) 
+{ 
+	clock_t start_t, end_t;
+    numerical_value ms = 1000 * seconds_delay; 
+    // conversion numerical_valueo milli seconds is important
+    clock_t ct = clock(); 
+    //utilizing clock helps expanding the proficiency of postpone work as it precisely characterizes 1 sec
+    //in the event that an estimation of 1000 is offered straightforwardly to the circle,system with high speed process it faster  
+    //execution time record is taken with the help of clock
+    char ch;
+    numerical_value count=0;
+    start_t=clock();
+    while (clock() < ct + ms)
+    	{    		
+    		if(kbhit())
+    		{
+    			ch=getch();
+    			if ((numerical_value)ch == 27)
+    			{
+    				exit(0);
+    			}
+    			else
+    			{
+    				count++;
+    				output("\n ****Timer restarted**** \n");
+    				end_t=clock();
+    				temp += end_t - start_t;
+    				break;
+    			}
+
+    		}
+    	}
+
+    	if(count!=0){
+    	delay(seconds_delay);}
+    	else
+    	{
+    		end_t=clock();
+    		temp += end_t - start_t;
+    	}
+} 
+int main()
+{ 
+	numerical_value i; 
+	numerical_value delay_time;
+	char ch;
+    srand(time(0)); 
+        output("****delay in seconds:**** ");
+        scanf("%d",&delay_time);
+        //to understand a loop
+        //numerical_value temp=0;
+        output("****Program starts now:****");
+    	for (i = 0; i < 1000; i++) 
+    	{
+    		delay(delay_time);
+        	output("\n%d seconds have passed\n", (temp/1000)); 
+        	output("****Random number are:**** %d",rand()); // to generate the random numbers
+    	}
+    return 0; 
+}
