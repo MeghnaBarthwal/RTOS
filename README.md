@@ -16,7 +16,7 @@ The segmets should be run differently. This file contains different code segment
 compile: gcc lab1q1.c -o lab1q1.exe 
 run: size lab1q1.exe
 
-![ScreenshotQ1](Screenshot 187.png)
+![output screen shot memorymap](Screenshot (187).png)
 
 
 # RTOS Session0 Q2
