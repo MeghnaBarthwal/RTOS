@@ -16,8 +16,6 @@ The segmets should be run differently. This file contains different code segment
 compile: gcc lab1q1.c -o lab1q1.exe 
 run: size lab1q1.exe
 
-![output screen shot memorymap](Screenshot (187).png)
-
 
 # RTOS Session0 Q2
 There is a delay function given by user. It will count the number upto that but if we type anything in between except esc than the delay function will restart.
